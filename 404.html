@@ -1,2 +1,150 @@
-<p>找不到页面（404 not found） </p>
-
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - 粽子不解绳导航网</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .isometric-box {
+            width: 300px;
+            height: 200px;
+            background: #4a6ee0;
+            position: relative;
+            margin: 0 auto 40px;
+            transform: rotateX(60deg) rotateZ(-45deg);
+            transform-style: preserve-3d;
+            box-shadow: -20px 20px 40px rgba(0,0,0,0.2);
+            animation: float 3s infinite ease-in-out;
+        }
+        
+        .isometric-box:before, .isometric-box:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .isometric-box:before {
+            background: #3a5bc7;
+            transform: translateZ(-50px);
+        }
+        
+        .isometric-box:after {
+            background: #5c7df1;
+            transform: translateX(50px) rotateY(90deg);
+        }
+        
+        .error-code {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateX(-60deg) rotateZ(45deg);
+            font-size: 5rem;
+            font-weight: bold;
+            color: white;
+            width: 100%;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #4a6ee0;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(74, 110, 224, 0.3);
+        }
+        
+        .btn:hover {
+            background: #3a5bc7;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 110, 224, 0.4);
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: rotateX(60deg) rotateZ(-45deg) translateY(0);
+            }
+            50% {
+                transform: rotateX(60deg) rotateZ(-45deg) translateY(-20px);
+            }
+        }
+        
+        .isometric-dots {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: radial-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        @media (max-width: 480px) {
+            .isometric-box {
+                width: 250px;
+                height: 150px;
+            }
+            
+            .error-code {
+                font-size: 4rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="isometric-dots"></div>
+    <div class="container">
+        <div class="isometric-box">
+            <div class="error-code">404</div>
+        </div>
+        <h1>页面未找到</h1>
+        <p>
+            抱歉，您访问的页面不存在或已被移除<br>
+            可能是链接错误或页面已被删除
+        </p>
+        <a href="/" class="btn">返回首页</a>
+    </div>
+</body>
+</html>
